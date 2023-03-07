@@ -28,6 +28,14 @@ int main()
 	std::cout << f1-- * f2 << std::endl;
 	std::cout << "Значение дроби 1 = " << f1 << std::endl;
 
+	std::cout << std::endl;
+	std::cout << "f1 = " << f1 << std::endl;
+	std::cout << "++f1 = " << ++f1 << std::endl;
+	std::cout << "f1 = " << f1 << std::endl;
+	std::cout << "f1-- = " << f1-- << std::endl;
+	std::cout << "f1 = " << f1 << std::endl;
+	std::cout << std::endl;
+
 	Fraction f3(1, 10);
 	Fraction f4(2, 10);
 	Fraction f5(3, 10);

@@ -14,7 +14,6 @@ public:
 	bool operator>  (const Fraction& right);
 	bool operator<= (const Fraction& right);
 	bool operator>= (const Fraction& right);
-	friend std::ostream& operator<< (std::ostream& left, Fraction right);
 	Fraction operator+ (Fraction& right);
 	Fraction operator- (Fraction& right);
 	Fraction operator* (Fraction& right);
@@ -23,5 +22,9 @@ public:
 	Fraction operator++ (int);
 	Fraction operator-- ();
 	Fraction operator-- (int);
+	//~Fraction();
+	int get_numerator() const;
+	int get_denominator() const;
 };
 
+std::ostream& operator<< (std::ostream& left, const Fraction& right);

@@ -69,6 +69,9 @@ bool Fraction::operator<= (const Fraction& right) {
 		return false;
 }
 
+int Fraction::get_numerator() const { return numerator_; }
+int Fraction::get_denominator() const { return denominator_; }
+
 bool Fraction::operator>= (const Fraction& right) {
 	if (*this == right || *this > right)
 		return true;
@@ -76,8 +79,8 @@ bool Fraction::operator>= (const Fraction& right) {
 		return false;
 }
 
-std::ostream& operator<< (std::ostream& left, Fraction right) {
-	left << right.numerator_ << '/' << right.denominator_;
+std::ostream& operator<< (std::ostream& left, const Fraction& right) {
+	left << right.get_numerator() << '/' << right.get_denominator();
 	return left;
 }
 
@@ -114,8 +117,9 @@ Fraction Fraction::operator++ () {
 }
 
 Fraction Fraction::operator++ (int) {
+	Fraction tmp = *this;
 	numerator_ += denominator_;
-	return *this;
+	return tmp;
 }
 Fraction Fraction::operator-- () {
 	numerator_ -= denominator_;
@@ -123,6 +127,11 @@ Fraction Fraction::operator-- () {
 }
 
 Fraction Fraction::operator-- (int) {
+	Fraction tmp = *this;
 	numerator_ -= denominator_;
-	return *this;
+	return tmp;
 }
+
+//Fraction::~Fraction() {
+//	std::cout << std::endl << "destructor" << std::endl;
+//}
